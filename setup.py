@@ -48,5 +48,7 @@ setup(
     entry_points="""
       [rasterio.rio_plugins]
       stack-sar=insar.scripts.cli:stack_sar
+      process-stack=insar.scripts.cli:process_stack
+      flight-path=insar.scripts.flight:flight_path
       """,
 )

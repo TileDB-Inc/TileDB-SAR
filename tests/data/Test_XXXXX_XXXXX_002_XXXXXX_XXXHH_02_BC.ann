@@ -30,13 +30,6 @@ Stack Name                                               (&)             = Test_
 Stack Line Number                                        (-)             = 2                      ; Track number in stack
 Number of Segments                                       (-)             = 1
 
-
-; URL of JPL website for precision data
-
-
-URL                                                      (&)             = http://uavsar.jpl.nasa.gov/cgi-bin/product.pl?jobName=Haywrd_23501_02
-
-
 ; Comments
 
 Flight Plan Comments                                     (&)             =  Perpendicular to Test 
