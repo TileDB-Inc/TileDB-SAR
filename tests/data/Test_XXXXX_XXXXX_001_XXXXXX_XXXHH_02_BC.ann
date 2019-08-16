@@ -1,0 +1,65 @@
+; Parameter file for UAVSAR stackline Test 
+; intentionally created for testing uavsar parsing by this project
+; search for parameters/value rather than placement in file
+;
+; slc = single look complex slant range image
+; slc_mag and slc_phase are derived from the same 8 bytes per pixel of the slc input file, 
+; where the first 4 bytes contain the real part of the complex data and the second 4 bytes contain the imaginary part of the complex data
+;
+; llh = latitude/longitude/dem height of each pixel in the slc
+; LAT/LONG/HGT are packed as 3 floating point values per slc pixel (data order: lat1 lon1 hgt1 lat2 lon2 hgt2 ...)
+;
+; lkv = look vector at the target pointing from the aircraft to the ground, in ENU (east, north, up) components
+; look vector ENU components are packed as 3 floating point values per slc pixel (data order: east1 north1 up1 east2 north2 up2)
+;
+; Peg position is the nadir position of aircraft at the middle of the datatake
+; Projection of image is relative to the flightline (S - along track position, C - cross track position)
+; S0, C0 is offset to upper left coordinate of SLC in meters
+
+
+UAVSAR Annotation Type                                   (&)             = Stack InSAR            ; Choices: PolSAR, Browse InSAR, Refined InSAR, Stack InSAR
+UAVSAR Stack Annotation File Version Number              (-)             = 1.0
+
+; General location of data (non-unique)
+
+Site Description                                         (&)             = Test
+
+; Stack information
+
+Stack Name                                               (&)             = Test_XXXXX_01
+Stack Line Number                                        (-)             = 1                      ; Track number in stack
+Number of Segments                                       (-)             = 1
+
+; Comments
+
+Flight Plan Comments                                     (&)             =  Perpendicular to Test 
+Processing Comments                                      (&)             =  N/A 
+
+
+slc_1_1x1 Columns                                        (pixels)        = 10                     ; samples in SLC 1x1 segment 1
+slc_1_1x1 Rows                                           (pixels)        = 20                     ; lines in SLC 1x1 segment 1
+slc_1_1x4 Columns                                        (pixels)        = 5                      ; samples in SLC 1x4 segment 1
+slc_1_1x4 Rows                                           (pixels)        = 5                      ; lines in SLC 1x4 segment 1
+
+
+; Acquisition parameters
+
+Acquisition Mode                                         (&)             = PolSAR
+Pulse Length                                             (microsec)      = 40.0
+Steering Angle                                           (deg)           = 90                     ; 90 deg is boresite
+Bandwidth                                                (MHz)           = 80.0
+Look Direction                                           (&)             = Left
+Ping-Pong or Single Antenna Transmit                     (&)             = Ping-Pong
+Hardware Version Number                                  (&)             = N/A   
+
+
+; Processing parameters
+
+Polarization                                             (&)             = HH
+slc_1_1x1_phase.set_rows                                 (pixels)        = 20                     ; SLC lines
+slc_1_1x1_phase.set_cols                                 (pixels)        = 10                     ; SLC samples
+slc_1_1x1_mag.set_rows                                   (pixels)        = 20                     ; SLC lines
+slc_1_1x1_mag.set_cols                                   (pixels)        = 10                     ; SLC samples
+lkv_2_2x8.set_cols                                       (pixels)        = 4950                   ; LKV samples
+slc_1_1x1_mag.val_frmt                                   (&)             = COMPLEX_MAGNITUDE      ; SLC data type
+slc_1_1x1_phase.val_frmt                                 (&)             = COMPLEX_PHASE          ; SLC data type
