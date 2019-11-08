@@ -30,7 +30,6 @@ conda activate insar
 conda install -c anaconda numpy
 conda install -c anaconda cython
 conda install dask
-conda install -c conda-forge dask-image
 conda install xarray
 conda install -c conda-forge tiledb-py
 ```
