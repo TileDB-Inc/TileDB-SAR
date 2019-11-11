@@ -70,7 +70,7 @@ We are currently patching `dask/array/tiledb_io.py`, this will be merged into da
 Install sar-stack command line plugin
 
 ```
-cd SAR-TileDB
+cd TileDB-SAR
 pip install -e .
 rio stack-sar --help
 ```

@@ -17,8 +17,8 @@ with open("README.md") as f:
 # Runtime requirements.
 inst_reqs = [
     "click",
-    "rasterio[s3]>=1.0.9",
-    "numpy~=1.15"
+    "rasterio",
+    "numpy"
 ]
 
 extra_reqs = {
@@ -40,7 +40,7 @@ setup(
     ],
     keywords="SAR INSAR TileDB",
     author=u"TileDB Inc",
-    url="https://github.com/TileDB-Inc/SAR-TileDB",
+    url="https://github.com/TileDB-Inc/TileDB-SAR",
     license="MIT",
     packages=find_packages(exclude=["ez_setup", "examples", "tests"]),
     install_requires=inst_reqs,
